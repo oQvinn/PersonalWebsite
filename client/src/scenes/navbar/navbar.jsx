@@ -31,8 +31,9 @@ const Navbar = () => {
     fontSize:"1.5rem",
     justifyContent: "center",
     alignItems: "center",
+    
     textAlign:"center",
-    marginLeft: "1rem"
+    
 
   }
   const iconStyle = {
@@ -54,10 +55,12 @@ const Navbar = () => {
       width="100%"
       display="flex"
       justifyContent="center"
+      alignItems="center"
     >
       <Stack 
         direction="column"
-        
+        justifyContent="center"
+        alignItems="center"
         spacing={2}
       >
         <FlexBetween>
@@ -75,7 +78,7 @@ const Navbar = () => {
               <InfoIcon sx={subheadIconStyle}/>About Me
           </Typography>
         </FlexBetween>
-        <Divider/>
+        <Divider style={{width:'100%'}}/>
         <FlexBetween>
           <Typography
               style={subheadStyle}
@@ -91,7 +94,7 @@ const Navbar = () => {
               <SourceIcon sx={subheadIconStyle}/>Portfolio
           </Typography>
         </FlexBetween>
-        <Divider/>
+        <Divider style={{width:'100%'}}/>
         <FlexBetween>
           <Typography
               style={subheadStyle}
@@ -107,7 +110,7 @@ const Navbar = () => {
               <PersonIcon sx={subheadIconStyle}/>Contact
           </Typography>
         </FlexBetween>
-        <Divider/>
+        <Divider style={{width:'100%'}}/>
         <FlexBetween>
           <Typography
               style={subheadStyle}
@@ -117,7 +120,7 @@ const Navbar = () => {
               <Stack
                 direction="column"
                 justifyContent="center"
-                marginLeft="1.75rem"
+                
                 marginTop="0.5rem"
                 spacing={1}
               >
