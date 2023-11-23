@@ -32,7 +32,7 @@ const About = () => {
         fontWeight:"200",
         fontSize:"0.9rem",
         textAlign: "left",
-        padding: "1rem"
+        padding: "0.4rem"
     }
 
     return(
@@ -73,8 +73,8 @@ const About = () => {
                 <Box
                     component="img"
                     sx={{
-                        height: "400px",
-                        width: "310px",
+                        height: isNonMobileScreens ? "25rem" : "15rem",
+                        width: isNonMobileScreens ? "19.375rem" : "9.375",
                         display: "inline-flex",
                         marginRight: "1rem",
                         marginTop: "1.5rem",
