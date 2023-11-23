@@ -7,6 +7,7 @@ import {
   useMediaQuery,
   Stack,
   Link,
+  Divider,
 } from "@mui/material";
 
 import InfoIcon from '@mui/icons-material/Info';
@@ -28,7 +29,11 @@ const Navbar = () => {
   const subheadStyle = {
     fontWeight:"bold",
     fontSize:"1.5rem",
-    marginLeft: "2rem"
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign:"center",
+    marginLeft: "1rem"
+
   }
   const iconStyle = {
     verticalAlign: "sub", 
@@ -44,16 +49,15 @@ const Navbar = () => {
     <Box 
       backgroundColor = {alt}
       padding="1rem"
-      paddingRight="2rem"
-      paddingLeft="0rem"
       borderRadius="15%"
       height="100%"
-      display={isNonMobileScreens ? "flex" : "inline-block"}
+      width="100%"
+      display="flex"
+      justifyContent="center"
     >
       <Stack 
         direction="column"
-        justifyContent="center"
-        // alignItems="flex"
+        
         spacing={2}
       >
         <FlexBetween>
@@ -71,7 +75,7 @@ const Navbar = () => {
               <InfoIcon sx={subheadIconStyle}/>About Me
           </Typography>
         </FlexBetween>
-        
+        <Divider/>
         <FlexBetween>
           <Typography
               style={subheadStyle}
@@ -87,7 +91,7 @@ const Navbar = () => {
               <SourceIcon sx={subheadIconStyle}/>Portfolio
           </Typography>
         </FlexBetween>
-
+        <Divider/>
         <FlexBetween>
           <Typography
               style={subheadStyle}
@@ -103,7 +107,7 @@ const Navbar = () => {
               <PersonIcon sx={subheadIconStyle}/>Contact
           </Typography>
         </FlexBetween>
-
+        <Divider/>
         <FlexBetween>
           <Typography
               style={subheadStyle}

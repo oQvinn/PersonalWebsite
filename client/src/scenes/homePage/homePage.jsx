@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import About from "scenes/about/about";
 import Portfolio from "scenes/portfolio/portfolio";
 import Contact from "scenes/contact/contact";
+import Footer from "scenes/footer/footer";
 const { Box, useMediaQuery, Container } = require("@mui/material");
 
 
@@ -36,6 +37,7 @@ const HomePage = () => {
                 </Box>
                 
              </Box>
+             <Footer/>
         </Box>
         
     );

@@ -30,6 +30,22 @@ const Header = () => {
 
   return (
     <FlexBetween padding="1rem 6%" backgroundColor={alt}>
+      <Typography color="primary">
+        <Box
+          component="img"
+            sx={{
+              height: isNonMobileScreens ? "4rem" : "4rem",
+              width: isNonMobileScreens ? "4rem" : "4rem",
+              marginRight: isNonMobileScreens ? "1rem" : "0rem",
+              border: 1,
+              borderWidth: "0.25rem"
+            }}
+          alt="Quinn's Avatar"
+          src="assets/flavicon.jpg"
+          borderRadius="15%"      
+        ></Box>
+      </Typography>
+      
       <FlexBetween gap="1.75rem">
         <Typography
           fontWeight="bold"

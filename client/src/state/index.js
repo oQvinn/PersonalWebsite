@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = { 
     mode: "light",
-    main: "greeting"
+    main: "greet"
 };
 
 export const authSlice = createSlice({
