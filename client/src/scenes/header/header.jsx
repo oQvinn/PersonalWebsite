@@ -82,8 +82,8 @@ const Header = () => {
           bottom="0"
           height="100%"
           zIndex="10"
-          maxWidth="500px"
-          minWidth="300px"
+          maxWidth="110px"
+          minWidth="110px"
           backgroundColor={background}
         >
           {/* CLOSE ICON */}
