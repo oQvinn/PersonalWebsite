@@ -138,6 +138,11 @@ const Portfolio = () => {
                 <p style={paraStyle}>
                     &nbsp;&nbsp;&nbsp;&nbsp; Below you will find names and descriptions of all my public Github repositories. Please visit the Github link on left to view the projects in depth.
                 </p>
+                <Box>
+                    <Typography style={paraStyle}>Legend:</Typography>
+                    <br/>
+                    
+                </Box>
                 {data ? data: null}
             </Typography>
         </Box>

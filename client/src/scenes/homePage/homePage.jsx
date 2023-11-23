@@ -22,14 +22,14 @@ const HomePage = () => {
                 display={isNonMobileScreens ? "flex" : "block"}
                 gap="1rem"
             >
-                <Box flexBasis={isNonMobileScreens ? "26%" : undefined}>
+                <Box flexBasis={isNonMobileScreens ? "25%" : undefined} marginBottom="2rem">
                     <Container>
                         <Navbar/>
                     </Container>
                 </Box>
                 
-                <Box flexBasis={isNonMobileScreens ? "55%" : undefined} sx={{height: "100vh"}}>
-                    {main === "greet" ? <Greet/> : null}   
+                <Box flexBasis={isNonMobileScreens ? "50%" : undefined} sx={{height: "100vh"}}>
+                    {main === "greet" || main === null? <Greet/> : null}   
                     {main === "about" ? <About/> : null}
                     {main === "portfolio" ? <Portfolio/>: null}
                     {main === "contact" ? <Contact/> : null}
