@@ -15,15 +15,15 @@ const Footer = () =>{
 
     const iconStyle = {
         verticalAlign: "sub", 
-        marginRight: "0.5rem",
+        marginRight: "0.15rem",
     }
     const mobileIconStyle={
       display: "flex",
-      marginLeft: "0.5rem"
       
     }
     const textStyle = {
-        fontWeight: "bold"
+        fontWeight: "bold",
+        textAlign: "center"
     }
     const mobileTextStyle = {
       textAlign: "center",
@@ -46,7 +46,7 @@ const Footer = () =>{
                       color="primary"
                       style={isNonMobileScreens ? textStyle : mobileTextStyle}
                     >
-                      <GitHubIcon sx={isNonMobileScreens ? iconStyle : mobileIconStyle}/><Link href="https://github.com/oQvinn" target="_blank" underline="none" color="inherit">Github</Link>
+                      <GitHubIcon style={{marginLeft: "0.35rem"}} sx={isNonMobileScreens ? iconStyle : mobileIconStyle}/><Link href="https://github.com/oQvinn" target="_blank" underline="none" color="inherit">Github</Link>
                     </Typography>
                   </Box>
                   
@@ -61,10 +61,12 @@ const Footer = () =>{
                     color="primary"
                     style={isNonMobileScreens ? textStyle : mobileTextStyle}
                   >
-                    <LinkedInIcon sx={isNonMobileScreens ? iconStyle : mobileIconStyle}/><Link href="https://www.linkedin.com/in/quinn-wegner-531425242/" target="_blank" underline="none" color="inherit">LinkedIn</Link>
+                    <LinkedInIcon style={{marginLeft: "0.55rem"}} sx={isNonMobileScreens ? iconStyle : mobileIconStyle}/><Link href="https://www.linkedin.com/in/quinn-wegner-531425242/" target="_blank" underline="none" color="inherit">LinkedIn</Link>
                   </Typography>
                   <Typography color="primary" style={isNonMobileScreens ? textStyle : mobileTextStyle}>
-                    Website Version: 1.0 - Nov.23/2023
+                    Version: 1.0
+                    <br/>
+                    Nov.23/2023
                   </Typography>
                   <Typography
                     sx={{
@@ -76,7 +78,7 @@ const Footer = () =>{
                     color="primary"
                     style={isNonMobileScreens ? textStyle : mobileTextStyle}
                   >
-                    <HeadsetMicIcon sx={isNonMobileScreens ? iconStyle : mobileIconStyle}/><Link href="#" target="_blank" underline="none" color="inherit">Discord</Link>
+                    <HeadsetMicIcon style={{marginLeft: "0.45rem"}} sx={isNonMobileScreens ? iconStyle : mobileIconStyle}/><Link href="#" target="_blank" underline="none" color="inherit">Discord</Link>
                   </Typography>
 
                   <Typography
@@ -89,7 +91,7 @@ const Footer = () =>{
                     color="primary"
                     style={isNonMobileScreens ? textStyle : mobileTextStyle}
                   >
-                    <TwitterIcon sx={isNonMobileScreens ? iconStyle : mobileIconStyle}/><Link href="https://twitter.com/oQvinn" target="_blank" underline="none" color="inherit">Twitter</Link>
+                    <TwitterIcon style={{marginLeft: "0.45rem"}} sx={isNonMobileScreens ? iconStyle : mobileIconStyle}/><Link href="https://twitter.com/oQvinn" target="_blank" underline="none" color="inherit">Twitter</Link>
                   </Typography>
 
         </FlexBetween>

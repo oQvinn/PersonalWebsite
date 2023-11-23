@@ -63,6 +63,9 @@ const Greet = () => {
                     <br/>
                     <br/>
                     &nbsp;&nbsp;&nbsp;&nbsp; Feel free to explore the website! All my important links are at the bottom of the page, and maybe I'll have figured out what to do with the right side of the site by the time someone reads this.
+                    <br/>
+                    <br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <i>**Currently this website has limited mobile viewport functionality, though it should be compatible with the average mobile device.**</i>
                 </p>
             </Typography>
         </Box>
