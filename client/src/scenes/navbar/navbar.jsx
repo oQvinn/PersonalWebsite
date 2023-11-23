@@ -55,6 +55,7 @@ const Navbar = () => {
       padding="1rem"
       borderRadius="15%"
       height="100%"
+      display={isNonMobileScreens ? "flex" : "block"}
     >
       <Stack 
         direction="column"

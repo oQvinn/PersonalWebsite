@@ -1,11 +1,13 @@
 import { Box, Button, FormControl, Input, InputLabel, TextField, Typography } from "@mui/material";
 import {useTheme} from "@mui/material";
 import emailjs from 'emailjs-com';
+import {useMediaQuery} from "@mui/material";
 
 const Contact = () => {
     const theme = useTheme();
     const primaryLight = theme.palette.primary.light;
     const alt = theme.palette.background.alt;
+    const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
     const headerStyle = {
         fontWeight:"bold",
@@ -40,6 +42,7 @@ const Contact = () => {
             padding="1rem"
             borderRadius="9%"
             height="100%"
+            display={isNonMobileScreens ? "block" : "block"}
         >
             <Typography style={headerStyle} color="primary">
                 Contact Me!

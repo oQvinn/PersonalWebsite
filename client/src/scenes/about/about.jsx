@@ -1,11 +1,13 @@
 import { Box, Typography } from "@mui/material";
 import {useTheme} from "@mui/material";
+import {useMediaQuery} from "@mui/material";
 
 const About = () => {
     const theme = useTheme();
     const primaryLight = theme.palette.primary.light;
     const alt = theme.palette.background.alt;
     const primary = theme.palette.primary.main;
+    const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
     const headerStyle = {
         fontWeight:"bold",
@@ -26,6 +28,12 @@ const About = () => {
         padding: "1rem",
         fontStyle: "italic"
     }
+    const mobileParaStyle = {
+        fontWeight:"200",
+        fontSize:"0.9rem",
+        textAlign: "left",
+        padding: "1rem"
+    }
 
     return(
         <Box
@@ -33,6 +41,7 @@ const About = () => {
             padding="1rem"
             borderRadius="9%"
             height="100%"
+            display={isNonMobileScreens ? "flex" : "block"}
             sx={{
                 overflowY: "scroll",
                 overflowX : "hidden",
@@ -55,9 +64,6 @@ const About = () => {
                     background: primaryLight
                   }
             }}
-            
-            
-            //justifyContent= "flex-end"
         >  
             
             <Typography style={headerStyle} color="primary">
@@ -69,10 +75,10 @@ const About = () => {
                     sx={{
                         height: "400px",
                         width: "310px",
-                        display: "flex",
+                        display: "inline-flex",
                         marginRight: "1rem",
                         marginTop: "1.5rem",
-                        float: "left",
+                        float: isNonMobileScreens ? "left" : "none",
                         borderColor: "primary",
                         border: 1,
                         borderWidth: "0.25rem"
@@ -80,9 +86,10 @@ const About = () => {
                     alt="Image of Quinn."
                     src="assets/me2.jpg"
                     borderRadius="15%"
+                    
                 >
                 </Box>
-                <p style={paraStyle}>
+                <p style={isNonMobileScreens? paraStyle : mobileParaStyle}>
                     &nbsp;&nbsp;&nbsp;&nbsp; Hello! My name is Quinn Wegner. I'm a software developer who's currently enthusiastic about creating fun and creative projects, or just expanding my knowledge on new and interesting technologies. 
                     <br/>
                     <br/>
