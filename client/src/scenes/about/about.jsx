@@ -76,7 +76,7 @@ const About = () => {
                         height: isNonMobileScreens ? "25rem" : "15rem",
                         width: isNonMobileScreens ? "19.375rem" : "9.375",
                         display: "inline-flex",
-                        marginRight: "1rem",
+                        marginRight: isNonMobileScreens ? "1rem" : "0rem",
                         marginTop: "1.5rem",
                         float: isNonMobileScreens ? "left" : "none",
                         borderColor: "primary",

@@ -15,19 +15,15 @@ import {
 } from "@mui/icons-material";
 import { useDispatch } from "react-redux";
 import { setMain, setMode } from "state";
-import { useNavigate } from "react-router-dom";
 import FlexBetween from "components/FlexBetween";
 
 
 const Header = () => {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
   const theme = useTheme();
-  const neutralLight = theme.palette.neutral.light;
-  const dark = theme.palette.neutral.dark;
   const background = theme.palette.background.default;
   const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
@@ -108,13 +104,15 @@ const Header = () => {
               sx={{ fontSize: "25px" }}
             >
               {theme.palette.mode === "dark" ? (
-                <DarkMode sx={{ fontSize: "25px" }} />
+                <DarkMode sx={{ fontSize: "25px" }} color= "primary"/>
               ) : (
-                <LightMode sx={{ color: dark, fontSize: "25px" }} />
+                <LightMode sx={{ fontSize: "25px" }} color= "primary"/>
               )}
             </IconButton>
 
-            <Message sx={{ fontSize: "25px" }} />
+            <IconButton onClick={() => dispatch(setMain("contact"))}>
+              <Message sx={{ fontSize: "25px" }} color="primary"/>
+            </IconButton>
           </FlexBetween>
         </Box>
       )}

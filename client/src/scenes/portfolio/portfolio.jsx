@@ -1,5 +1,5 @@
 import { Box, Card, CardActions, CardContent, CardHeader, Collapse, Typography } from "@mui/material";
-import {useTheme} from "@mui/material";
+import {useTheme, useMediaQuery} from "@mui/material";
 import { useEffect, useState } from "react";
 import IconButton  from '@mui/material/IconButton';
 import { styled } from '@mui/material/styles';
@@ -9,6 +9,8 @@ const Portfolio = () => {
     const theme = useTheme();
     const primaryLight = theme.palette.primary.light;
     const alt = theme.palette.background.alt;
+    const primary = theme.palette.primary.main;
+    const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
     const headerStyle = {
         fontWeight:"bold",
@@ -21,6 +23,12 @@ const Portfolio = () => {
         fontSize:"1.3rem",
         textAlign: "left",
         padding: "1rem"
+    }
+    const mobileParaStyle = {
+        fontWeight:"200",
+        fontSize:"0.9rem",
+        textAlign: "left",
+        padding: "0.4rem"
     }
 
     const [data, setData] = useState([]);
@@ -131,17 +139,39 @@ const Portfolio = () => {
             backgroundColor = {alt}
             padding="1rem"
             borderRadius="9%"
-            height="100%"
+            height="100vh"
+            sx={{
+                overflowY: "scroll",
+                overflowX : "hidden",
+                '&::-webkit-scrollbar': {
+                    width: '0.8rem',
+                    //background: 'primary',
+                    
+                  },
+                  '&::-webkit-scrollbar-track': {
+                    background: {alt},
+                    marginTop: "5rem",
+                    marginBottom: "5rem",
+                    borderRadius: "10px",
+                  },
+                  '&::-webkit-scrollbar-thumb': {
+                    background: primary,
+                    borderRadius: "10px",
+                  },
+                  '&::-webkit-scrollbar-thumb:hover': {
+                    background: primaryLight
+                  }
+            }}
         >
             <Typography style={headerStyle} color="primary">
                 Portfolio
-                <p style={paraStyle}>
-                    &nbsp;&nbsp;&nbsp;&nbsp; Below you will find names and descriptions of all my public Github repositories. Please visit the Github link on left to view the projects in depth.
+                <p style={isNonMobileScreens ? paraStyle : mobileParaStyle}>
+                    &nbsp;&nbsp;&nbsp;&nbsp; Below you will find names, descriptions, and technologies used for all of my public Github repositories. Please visit the Github link in the "Links" section to view the projects in depth.
                 </p>
                 <Box>
-                    <Typography style={paraStyle}>Legend:</Typography>
+                    <Typography style={isNonMobileScreens ? paraStyle : mobileParaStyle}>Legend:</Typography>
                     <br/>
-                    
+
                 </Box>
                 {data ? data: null}
             </Typography>
