@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import IconButton  from '@mui/material/IconButton';
 import { styled } from '@mui/material/styles';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import SquareRoundedIcon from '@mui/icons-material/SquareRounded';
+import FlexBetween from "components/FlexBetween";
 
 const Portfolio = () => {
     const theme = useTheme();
@@ -22,13 +24,30 @@ const Portfolio = () => {
         fontWeight:"200",
         fontSize:"1.3rem",
         textAlign: "left",
-        padding: "1rem"
+        paddingRight: "1rem",
+        paddingLeft: "1rem",
+        paddingTop: "1rem"
     }
     const mobileParaStyle = {
         fontWeight:"200",
         fontSize:"0.9rem",
         textAlign: "left",
-        padding: "0.4rem"
+        paddingRight: "0.4rem",
+        paddingLeft: "0.4rem",
+        paddingTop: "0.4rem"
+    }
+    const iconStyle = {
+        verticalAlign: "sub", 
+        marginRight: "0.3rem"
+    }
+    const mobileLegend = {
+        fontWeight:"200",
+        fontSize:"0.9rem",
+        marginRight: "1rem"
+    }
+    const regLegend = {
+        fontWeight:"200",
+        fontSize:"1.3rem",
     }
 
     const [data, setData] = useState([]);
@@ -166,12 +185,28 @@ const Portfolio = () => {
             <Typography style={headerStyle} color="primary">
                 Portfolio
                 <p style={isNonMobileScreens ? paraStyle : mobileParaStyle}>
-                    &nbsp;&nbsp;&nbsp;&nbsp; Below you will find names, descriptions, and technologies used for all of my public Github repositories. Please visit the Github link in the "Links" section to view the projects in depth.
+                    &nbsp;&nbsp;&nbsp;&nbsp; Below you will find names, descriptions, and technologies used for all of my public Github repositories. Please visit the Github link in the "Links" section, or at the bottom of the page, to view the projects in depth.
                 </p>
                 <Box>
-                    <Typography style={isNonMobileScreens ? paraStyle : mobileParaStyle}>Legend:</Typography>
-                    <br/>
-
+                    <Box display={isNonMobileScreens ? "flex" : "inline-flex"} justifyContent="space-evenly">
+                        <Typography style={isNonMobileScreens ? regLegend : mobileLegend}>
+                            <SquareRoundedIcon sx={{background: "primary", color: "green"}} style={iconStyle}/>Languages
+                        </Typography>   
+                        <Typography style={isNonMobileScreens ? regLegend : mobileLegend}>
+                            <SquareRoundedIcon sx={{background: "primary", color: "red"}} style={iconStyle}/>Frameworks/Libraries
+                        </Typography>   
+                    </Box>
+                    <Box display={isNonMobileScreens ? "flex" : "inline-flex"} marginBottom="1rem" justifyContent="space-evenly">
+                        <Typography style={isNonMobileScreens ? regLegend : mobileLegend}>
+                            <SquareRoundedIcon sx={{background: "primary", color: "cyan"}} style={iconStyle}/>Databases
+                        </Typography>   
+                        <Typography style={isNonMobileScreens ? regLegend : mobileLegend}>
+                            <SquareRoundedIcon sx={{background: "primary", color: "pink"}} style={iconStyle}/>Tools
+                        </Typography>   
+                        <Typography style={isNonMobileScreens ? regLegend : mobileLegend}>
+                            <SquareRoundedIcon sx={{background: "primary", color: "gray"}} style={iconStyle}/>Other
+                        </Typography>   
+                    </Box>  
                 </Box>
                 {data ? data: null}
             </Typography>
