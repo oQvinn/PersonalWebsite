@@ -18,6 +18,7 @@ import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
 import PersonIcon from '@mui/icons-material/Person';
 import LinkIcon from '@mui/icons-material/Link';
 import { setMain } from "state";
+import { useRef } from "react";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -56,6 +57,7 @@ const Navbar = () => {
       display="flex"
       justifyContent="center"
       alignItems="center"
+      id="mainbox"
     >
       <Stack 
         direction="column"
@@ -157,8 +159,6 @@ const Navbar = () => {
                   </Typography>
               </Stack>
           </Typography>
-          
-          
         </FlexBetween>
       </Stack>
     </Box>

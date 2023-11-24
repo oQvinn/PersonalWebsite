@@ -7,6 +7,7 @@ import About from "scenes/about/about";
 import Portfolio from "scenes/portfolio/portfolio";
 import Contact from "scenes/contact/contact";
 import Footer from "scenes/footer/footer";
+import { useEffect } from "react";
 const { Box, useMediaQuery, Container } = require("@mui/material");
 
 
@@ -14,8 +15,16 @@ const { Box, useMediaQuery, Container } = require("@mui/material");
 const HomePage = () => {
     const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
     const main = useSelector((state) => state.main);
+
+    
+    //mainArea.scrollIntoView({behavior: "smooth", block:"end", inline:"end"}) 
+    useEffect(() => {
+        let mainArea = document.getElementById('mainBox');
+        mainArea.scrollIntoView({behavior: "smooth", block:"start", inline: "end"})
+    }, [main])
+
     return(
-        <Box>
+        <Box >
             <Header/>
             <Box
                 width="100%"
@@ -28,12 +37,12 @@ const HomePage = () => {
                         <Navbar/>
                     </Container>
                 </Box>
-                
-                <Box flexBasis={isNonMobileScreens ? "50%" : undefined} sx={{height: "100vh"}}>
+            
+                <Box flexBasis={isNonMobileScreens ? "50%" : undefined} sx={{height: "100vh"}} id="mainBox">
                     {main === "greet" || main === null? <Greet/> : null}   
-                    {main === "about" ? <About/> : null}
+                    {main === "about" ? <About/>  : null}
                     {main === "portfolio" ? <Portfolio/>: null}
-                    {main === "contact" ? <Contact/> : null}
+                    {main === "contact" ? <Contact/> : null}  
                 </Box>
                 
              </Box>
