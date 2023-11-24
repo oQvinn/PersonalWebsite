@@ -82,9 +82,11 @@ const Portfolio = () => {
         marginLeft: 'auto', 
         transition: theme.transitions.create('transform', {duration: theme.transitions.duration.shortest,})
     }));
-
+    
     const handleExpandClick = i => {
         setExpanded(expanded === i ? -1: i);
+        let mainArea = document.getElementById('content');
+        mainArea.scrollIntoView({behavior: "smooth", block:"start"})
     }
 
     useEffect(() => {
@@ -104,9 +106,9 @@ const Portfolio = () => {
             const cleaned = repos.map((rep, i) => {
                 const modifiedDesc = rep.description.split('Technologies');
                 const justTech = modifiedDesc[1].slice(8, modifiedDesc[1].length-1).split(", ");
-                console.log(justTech[1]);
+            
                 return(
-                    <div>
+                    <Box id="content">
                         <Card sx={{width: "100%", marginBottom: "0.5rem"}} key={rep.id} variant="outlined">
                             <CardActions>
                                 <Typography color="primary"><CardHeader title={rep.name}></CardHeader></Typography>
@@ -147,12 +149,18 @@ const Portfolio = () => {
                                 </CardContent>
                             </Collapse>
                         </Card>
-                    </div>
+                    </Box>
                 )
             })
             setData(cleaned);
         })
     }, [expanded]);
+
+    // useEffect(() => {
+        
+    // }, [expanded])
+
+
     return(
         <Box
             backgroundColor = {alt}
@@ -208,7 +216,9 @@ const Portfolio = () => {
                         </Typography>   
                     </Box>  
                 </Box>
-                {data ? data: null}
+                <Box sx={{marginTop: "2rem"}}>
+                    {data ? data: null}
+                </Box>
             </Typography>
         </Box>
     );
