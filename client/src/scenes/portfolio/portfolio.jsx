@@ -85,8 +85,8 @@ const Portfolio = () => {
     
     const handleExpandClick = i => {
         setExpanded(expanded === i ? -1: i);
-        let mainArea = document.getElementById('content');
-        mainArea.scrollIntoView({behavior: "smooth", block:"start"})
+        // let mainArea = document.getElementById('content');
+        // mainArea.scrollIntoView({behavior: "smooth", block:"nearest", inline: "end"})
     }
 
     useEffect(() => {
@@ -108,7 +108,7 @@ const Portfolio = () => {
                 const justTech = modifiedDesc[1].slice(8, modifiedDesc[1].length-1).split(", ");
             
                 return(
-                    <Box id="content">
+                    <Box>
                         <Card sx={{width: "100%", marginBottom: "0.5rem"}} key={rep.id} variant="outlined">
                             <CardActions>
                                 <Typography color="primary"><CardHeader title={rep.name}></CardHeader></Typography>
